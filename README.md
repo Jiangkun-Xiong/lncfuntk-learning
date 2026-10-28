@@ -1,26 +1,25 @@
-# lncFunTK FIS micro-reproduction / lncFunTK 评分模块学习
+# lncFunTK learning / 从评分到功能假设
 
-An AI-assisted learning scaffold for Jiangkun Xiong, based on the published lncFunTK implementation associated with Hao Sun's research. This is a **small component exercise using synthetic data**, not a paper-level reproduction or a claim of independent bioinformatics proficiency.
+**贯穿问题：如何依据数据选择值得验证的 lncRNA，并说明选择的理由与边界？**
 
-[个人主页](https://jiangkun-xiong.github.io/) · [学习路线](https://jiangkun-xiong.github.io/learning/) · [详细学习手册](docs/HANDBOOK.md)
+An individual learning project starting from a small FIS-scoring exercise, then tracing its inputs, functional interpretation and biological context. This is not the original lncFunTK software or a paper-level reproduction.
 
-## What this project does
+[个人主页](https://jiangkun-xiong.github.io/) · [学习主线](LEARNING_MAP.md) · [学习手册](docs/HANDBOOK.md) · [迁移来源](MIGRATION.md)
 
-1. Reads six deliberately invented lncRNA neighbor-count profiles.
-2. Scales each feature column to [0, 1] with min-max scaling.
-3. Reproduces the inspected weighted FIS arithmetic: `0.22 × miRNA + 0.57 × TF + 0.21 × PCG` after scaling.
-4. Compares the arithmetic with a minimally adapted upstream `CalFIS.py`, neighbor counts with the original Perl script, and scaling with modern scikit-learn when available.
-5. Shows how changing weights changes a ranking. Alternative weights are teaching examples, not fitted or validated models.
+## One path, four linked questions
 
-## Why this small module
+| 阶段 | 为什么学 | 可检查产出 | 状态 |
+| --- | --- | --- | --- |
+| [01 算懂 FIS](modules/01-fis-scoring/README.md) | 候选如何得到分数？ | 自己运行、手算并解释 A/B 排序 | 合成基线已核对；本人任务待完成 |
+| [02 追溯输入](modules/02-expression-to-network/README.md) | 邻居数从哪里来？ | 样本表、矩阵说明、小型边表及规则解释 | 下一阶段规划 |
+| [03 功能解释](modules/03-function-and-validation/README.md) | 分数能支持什么假设？ | 背景集合说明与功能假设卡 | 依赖前一阶段 |
+| [04 领域背景](modules/04-stem-cell-context/README.md) | 干细胞问题中什么算合适证据？ | 两条自己的文献证据记录 | 摘要可并行读；解释待完成 |
 
-The full lncFunTK integrates RNA-seq, ChIP-seq and CLIP-seq to build regulatory networks and prioritise/annotate lncRNAs. Its original environment requires Python 2.7 and Perl. This exercise isolates an inspectable calculation so that the learner can understand one step before working toward an original demo or real data.
+先掌握一个可运行的小模块，再向前追溯输入、向后检查解释。完整工具的数据处理顺序仍是实验数据、网络、评分与功能解释。单细胞是[问题需要时再进入的分支](extensions/single-cell/README.md)。
 
-**Upstream:** [zhoujj2013/lncfuntk](https://github.com/zhoujj2013/lncfuntk), commit `65f6d18a2dbc2a09901a867583f5e2a84bdfb3a9`. This author-owned repository is linked to the group's published lncFunTK work; it is not a repository under the `cuhk-haosun` organisation. See [source map](notes/01_source_map.md) and [third-party attribution](THIRD_PARTY.md).
+## Current runnable exercise
 
-## Quick start
-
-Python 3.9 or later is sufficient for the main demo. From this directory:
+Python 3.9+ is sufficient for the main demo. Run from this repository's root:
 
 ```bash
 python scripts/run_demo.py --out outputs/my-first-run --actor learner-local-run
@@ -28,15 +27,13 @@ python scripts/test_fis.py
 python scripts/check_reference.py --out outputs/my-first-run/reference_check.json
 ```
 
-The reference check always runs the Python 3 arithmetic adapter. The Perl and scikit-learn checks are optional and report `skipped` if those tools are absent. Do not interpret a skipped check as a pass.
+Six invented lncRNA profiles are scaled by feature column to [0, 1], then combined using the inspected upstream default weights:
 
-To regenerate the invented input data, run `python scripts/make_toy_data.py`.
+```text
+FIS = 0.22 × scaled_miRNA + 0.57 × scaled_TF + 0.21 × scaled_PCG
+```
 
-## Verified initial output
-
-The **assistant**, not the learner, executed the initial scaffold verification on 2026-10-28. The initial run is recorded in `outputs/run_manifest.json` with actor `assistant-initialization`.
-
-| Rank | Synthetic lncRNA | FIS |
+| Rank | Synthetic candidate | Default FIS |
 | --- | --- | --- |
 | 1 | TOY_lnc_A | 0.7825 |
 | 2 | TOY_lnc_E | 0.5925 |
@@ -45,52 +42,36 @@ The **assistant**, not the learner, executed the initial scaffold verification o
 | 5 | TOY_lnc_D | 0.2150 |
 | 6 | TOY_lnc_ZERO | 0.0000 |
 
-The arithmetic comparison, Perl neighbor-count comparison and modern scikit-learn scaling comparison all passed in the initial environment. Four hand-calculated/boundary checks also passed. The relevant machine-readable evidence is in [outputs](outputs/).
+The initial scaffold and baseline were prepared and executed with AI assistance on 2026-10-28. Arithmetic, original Perl neighbor counting and modern scikit-learn scaling comparisons passed, along with four hand-calculated/boundary checks. See [verification evidence](outputs/reference_check.json) and [run manifest](outputs/run_manifest.json). Missing optional tools report `skipped` in a learner's reference check.
 
-These numbers describe invented inputs. They are not evidence for real lncRNA function, calibrated probabilities or biological discoveries.
+Synthetic scores are not biological findings or calibrated probabilities. Experimental-data preprocessing, network integration, weight training, random-network thresholding, GO enrichment and paper validation have not been reproduced here.
 
-## Current progress and authorship
+## Make the next record your own
 
-| Item | Current status | Who completed it |
-| --- | --- | --- |
-| Public-source inventory and pinned code map | Scaffold prepared | Assistant |
-| Synthetic data and small Python 3 demo | Implemented and executed | Assistant |
-| Initial component comparisons | Passed in the initial environment | Assistant |
-| Learner's own rerun | Pending | Jiangkun to complete |
-| Learner's explanation and reading notes | Pending | Jiangkun to complete |
-| Full legacy environment / original demo | Not attempted | Future work |
-| Real-data / paper-level reproduction | Not attempted | Future work |
+- [ ] Independently run the demo and locate your output files.
+- [ ] Hand-calculate A's 0.7825 and explain why B's higher total neighbor count does not give it a higher default FIS.
+- [ ] Explain one ranking change in the sensitivity output.
+- [ ] Inspect the [source map](notes/01_source_map.md).
+- [ ] Complete one entry in [your reading and run log](notes/03_reading_log.md).
 
-## What to do first
+Pending learner tasks remain pending. Later areas have questions, prerequisites and outputs, rather than an unconnected software list.
 
-- [ ] Run the quick-start commands on your own computer and save your outputs separately.
-- [ ] Calculate TOY_lnc_A's score by hand and explain why TOY_lnc_B has more neighbors but a lower default FIS.
-- [ ] Open the pinned upstream files in [notes/01_source_map.md](notes/01_source_map.md) and annotate what each one does.
-- [ ] Read the lncFunTK paper's workflow figure and record a short explanation in [notes/03_reading_log.md](notes/03_reading_log.md).
-- [ ] Explain three things this tiny exercise has not reproduced.
-
-These tasks become learning evidence when you complete and commit your own answers. The scaffold does not pre-fill them as completed.
-
-## What this project excludes
-
-Experimental sequencing processing, network reconstruction from experimental data, weight training, random-network threshold estimation, GO enrichment, and validation of paper findings. In particular, the FIS calculation here is **not** the full functional-lncRNA classification step.
-
-## Files
+## Where work belongs
 
 | Location | Purpose |
 | --- | --- |
-| `data/` | Six synthetic profiles, a typed toy node list and toy interactions |
-| `scripts/` | Demo, arithmetic helpers, reference comparison and boundary checks |
-| `vendor/lncfuntk/` | Small attributed upstream source files and one Python 3 compatibility adapter |
-| `outputs/` | Initial numerical output, sensitivity analysis and verification evidence |
-| `notes/` | Code map, questions, blank personal reading log and interview practice |
-| `docs/HANDBOOK.md` | Detailed Chinese learning and interview handbook |
-| `ROADMAP.md` | A bounded sequence of learner tasks |
+| `data/`, `scripts/`, `vendor/`, `outputs/` | Runnable FIS micro-exercise and preserved baseline |
+| `modules/` | Four stages, task briefs and evidence templates |
+| `extensions/` | Conditional learning branches |
+| `notes/` | Source map, exercises and personal reading/run log |
+| `docs/HANDBOOK.md` | Reference handbook; current priorities follow LEARNING_MAP.md |
+| `MIGRATION.md`, `migration_source.json` | Original location, commit and snapshot evidence |
 
-## References
+## Attribution
 
-- Zhou et al. (2018), *lncFunTK: a toolkit for functional annotation of long noncoding RNAs*. DOI: [10.1093/bioinformatics/bty339](https://doi.org/10.1093/bioinformatics/bty339).
-- Zhou et al. (2017), *LncFunNet: an integrated computational framework for identification of functional long noncoding RNAs in mouse skeletal muscle cells*. DOI: [10.1093/nar/gkx232](https://doi.org/10.1093/nar/gkx232).
-- [Hao Sun's CUHK-Shenzhen faculty profile](https://med.cuhk.edu.cn/teacher/1118).
+Upstream: [zhoujj2013/lncfuntk](https://github.com/zhoujj2013/lncfuntk), pinned at `65f6d18a2dbc2a09901a867583f5e2a84bdfb3a9`. Original notices and file hashes are retained; see [THIRD_PARTY.md](THIRD_PARTY.md).
 
-This project is an individual learning exercise and is not affiliated with or endorsed by the original authors or their laboratory.
+- Zhou et al. (2018), lncFunTK. DOI: [10.1093/bioinformatics/bty339](https://doi.org/10.1093/bioinformatics/bty339).
+- Zhou et al. (2017), LncFunNet. DOI: [10.1093/nar/gkx232](https://doi.org/10.1093/nar/gkx232).
+
+This learning project is not affiliated with or endorsed by the original authors or their laboratory.

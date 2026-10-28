@@ -1,0 +1,138 @@
+{
+  "source_repository": "Jiangkun-Xiong/Jiangkun-Xiong.github.io",
+  "source_directory": "learning/sun-lab-starter",
+  "source_commit": "c9446026c4cb97d11cccf418ec2fc89d481578a9",
+  "target_repository": "Jiangkun-Xiong/lncfuntk-learning",
+  "import_commit": "4c4004e394afa0da153570925bd17deadf1bff53",
+  "migrated_on": "2026-10-28",
+  "original_files": [
+    {
+      "path": "THIRD_PARTY.md",
+      "git_blob_sha": "30fecad7c1fd19b24219d516387c68da26bed697"
+    },
+    {
+      "path": ".gitignore",
+      "git_blob_sha": "cf82264abdc1d44ce3875f353d15c125b8485322"
+    },
+    {
+      "path": "requirements.txt",
+      "git_blob_sha": "793191018d31f98dab65b3701b693c9ac4b7ab68"
+    },
+    {
+      "path": "README.md",
+      "git_blob_sha": "aa089e1b09f5d71d7d0341d492ce70fdf1cb358d"
+    },
+    {
+      "path": "ROADMAP.md",
+      "git_blob_sha": "0986b959220107c9b129bf941270c7fe6067f125"
+    },
+    {
+      "path": "outputs/sensitivity.tsv",
+      "git_blob_sha": "706a4f0c1250787d348c08f444b633997570c55a"
+    },
+    {
+      "path": "outputs/reference_check.json",
+      "git_blob_sha": "243678acd226a74e3a2825b461b401814eface3d"
+    },
+    {
+      "path": "outputs/normalized_features.tsv",
+      "git_blob_sha": "4c15d136385414df84617f9688d8bf6e67c0f525"
+    },
+    {
+      "path": "outputs/fis_scores.tsv",
+      "git_blob_sha": "14235e714e53e76717b13a25aaf47de35432ff96"
+    },
+    {
+      "path": "outputs/run_manifest.json",
+      "git_blob_sha": "c4e73de856ec87b76364e8b0d3869fc33db777e9"
+    },
+    {
+      "path": "notes/02_first_exercises.md",
+      "git_blob_sha": "a250db0f9bbebb30898effb7aceea5f3fd1b94a8"
+    },
+    {
+      "path": "notes/04_interview_practice.md",
+      "git_blob_sha": "dee7270826c8a1c3886fb8cca2413ba3b1b0c81b"
+    },
+    {
+      "path": "notes/03_reading_log.md",
+      "git_blob_sha": "82a375cb56fc86c8c9b2ef5aca5f0f977cc956bf"
+    },
+    {
+      "path": "notes/01_source_map.md",
+      "git_blob_sha": "9e2aa0ec4a9c8e0c785cdd1630518e93fe61c559"
+    },
+    {
+      "path": "data/toy_neighbor_counts.tsv",
+      "git_blob_sha": "0639c8fa03aac718993ecfc4b7e186aff42e8beb"
+    },
+    {
+      "path": "data/toy_interactions.tsv",
+      "git_blob_sha": "69e5bced127b084c637687ce4be916ddf10f4967"
+    },
+    {
+      "path": "data/toy_nodes.tsv",
+      "git_blob_sha": "03e5b276b7915e08aa557bb4259dcd8e4a1e4aae"
+    },
+    {
+      "path": "scripts/make_toy_data.py",
+      "git_blob_sha": "8a44012fe012c97c4dc1cdfd4f357a99e611fbad"
+    },
+    {
+      "path": "scripts/run_demo.py",
+      "git_blob_sha": "349d70e164ebce655ff0aff59b90e493b02bd880"
+    },
+    {
+      "path": "scripts/check_reference.py",
+      "git_blob_sha": "ccd6cb02619ade3d00b67a782047048adb52bc7f"
+    },
+    {
+      "path": "scripts/test_fis.py",
+      "git_blob_sha": "842c8d292e4964fb7d171e1aeb92c356f6afb63d"
+    },
+    {
+      "path": "scripts/fis_core.py",
+      "git_blob_sha": "0302d073125578f71b0861c14fe329d4fb3e5aad"
+    },
+    {
+      "path": "docs/HANDBOOK.md",
+      "git_blob_sha": "440e51536d87cad66dab256ddce7f78eaa822e87"
+    },
+    {
+      "path": "vendor/lncfuntk/ScaleMaxMin.py2.txt",
+      "git_blob_sha": "fb2986aee7605be6e39aed61a46afd5dbeb7ab3f"
+    },
+    {
+      "path": "vendor/lncfuntk/CalFIS.py2.txt",
+      "git_blob_sha": "ef21c135952490bfde98f369fb1360591494af5d"
+    },
+    {
+      "path": "vendor/lncfuntk/FunctionalityPrediction.pl.txt",
+      "git_blob_sha": "dd8be9f331f2c53c9d1d3e584419c1fe3292a0fa"
+    },
+    {
+      "path": "vendor/lncfuntk/CalFdr4FIS.pl.txt",
+      "git_blob_sha": "0423d897e6f63ed21db302ce9c4c8a3d800e5028"
+    },
+    {
+      "path": "vendor/lncfuntk/StatNetworkDegree.pl",
+      "git_blob_sha": "e874903177d64ddd5c7c79141ca1d14112e9cff2"
+    },
+    {
+      "path": "vendor/lncfuntk/provenance.json",
+      "git_blob_sha": "65cfdf38e689c6812a4ce3420cdf998ddd9546cf"
+    },
+    {
+      "path": "vendor/lncfuntk/CalFIS.py3.py",
+      "git_blob_sha": "02db151cf60c068519064cd4205d5fc8e3a7c98f"
+    },
+    {
+      "path": "vendor/lncfuntk/pretrained.weight.value.lst",
+      "git_blob_sha": "25a334909d2d4c7cda71b49eac67709a1954322c"
+    },
+    {
+      "path": "vendor/lncfuntk/LICENSE",
+      "git_blob_sha": "525a7cf1cb97b5d3c4501b50e283d2d3be04ec99"
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+# Python >= 3.9. The main demo uses only the Python standard library.
+# Optional reference check: numpy, scikit-learn and Perl.

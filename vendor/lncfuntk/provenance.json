@@ -1,0 +1,55 @@
+{
+  "retrieved_on": "2026-10-28",
+  "repository": "zhoujj2013/lncfuntk",
+  "files": [
+    {
+      "source_path": "bin/FunctionalityPrediction/CalFIS.py",
+      "vendor_path": "CalFIS.py2.txt",
+      "upstream_blob_sha": "ef21c135952490bfde98f369fb1360591494af5d",
+      "commit": "65f6d18a2dbc2a09901a867583f5e2a84bdfb3a9",
+      "sha256": "8baec36c906173e107e4dabc08a92da05d0fbec06d0e415d92efae906abe706e"
+    },
+    {
+      "source_path": "bin/FunctionalityPrediction/StatNetworkDegree.pl",
+      "vendor_path": "StatNetworkDegree.pl",
+      "upstream_blob_sha": "e874903177d64ddd5c7c79141ca1d14112e9cff2",
+      "commit": "65f6d18a2dbc2a09901a867583f5e2a84bdfb3a9",
+      "sha256": "27fa8cac94ffde8a1448cf8f8fe54ed5bc2e518f4308d1da7ee9f0716b7eb5ca"
+    },
+    {
+      "source_path": "bin/Training/ScaleMaxMin.py",
+      "vendor_path": "ScaleMaxMin.py2.txt",
+      "upstream_blob_sha": "fb2986aee7605be6e39aed61a46afd5dbeb7ab3f",
+      "commit": "65f6d18a2dbc2a09901a867583f5e2a84bdfb3a9",
+      "sha256": "73672ff67fbb87a51594adde611c788bbf6cdb76b7b08c63bf6ff1f95b14b3a0"
+    },
+    {
+      "source_path": "bin/FunctionalityPrediction/FunctionalityPrediction.pl",
+      "vendor_path": "FunctionalityPrediction.pl.txt",
+      "upstream_blob_sha": "dd8be9f331f2c53c9d1d3e584419c1fe3292a0fa",
+      "commit": "65f6d18a2dbc2a09901a867583f5e2a84bdfb3a9",
+      "sha256": "55b10a784111c6742c481e56c7a53ef322525e62687ee020c44206d9b33376f9"
+    },
+    {
+      "source_path": "bin/FunctionalityPrediction/CalFdr4FIS.pl",
+      "vendor_path": "CalFdr4FIS.pl.txt",
+      "upstream_blob_sha": "0423d897e6f63ed21db302ce9c4c8a3d800e5028",
+      "commit": "65f6d18a2dbc2a09901a867583f5e2a84bdfb3a9",
+      "sha256": "b3273c4e26d988cacf3aff6e78565216f9031ba92550daaa511d4dba4e1b05fa"
+    },
+    {
+      "source_path": "LICENSE",
+      "vendor_path": "LICENSE",
+      "upstream_blob_sha": "525a7cf1cb97b5d3c4501b50e283d2d3be04ec99",
+      "commit": "65f6d18a2dbc2a09901a867583f5e2a84bdfb3a9",
+      "sha256": "d4f2d5fdd603f57b89ae421d0f34f335c640afe7568ae09d24670802b280e22f"
+    },
+    {
+      "source_path": "bin/Training/pretrained.weight.value.lst",
+      "vendor_path": "pretrained.weight.value.lst",
+      "upstream_blob_sha": "25a334909d2d4c7cda71b49eac67709a1954322c",
+      "commit": "65f6d18a2dbc2a09901a867583f5e2a84bdfb3a9",
+      "sha256": "8e84522ac6fc36238a93a35bfaa958506f1f98a45522702e31742e21a28bfa49"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "data_origin": "synthetic",
+  "upstream_commit": "65f6d18a2dbc2a09901a867583f5e2a84bdfb3a9",
+  "upstream_cal_fis_adapter": {
+    "status": "passed",
+    "rows": 6,
+    "max_abs_error": 0.0
+  },
+  "upstream_perl_neighbor_counts": {
+    "status": "passed",
+    "lncRNAs": 6
+  },
+  "modern_sklearn_minmax": {
+    "status": "passed",
+    "max_abs_error": 0.0
+  }
+}

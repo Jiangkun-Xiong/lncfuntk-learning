@@ -1,0 +1,7 @@
+lncRNA	miRNA	TF	PCG
+TOY_lnc_A	1	4	3
+TOY_lnc_B	4	1	4
+TOY_lnc_C	0	2	1
+TOY_lnc_D	2	0	2
+TOY_lnc_E	3	3	0
+TOY_lnc_ZERO	0	0	0

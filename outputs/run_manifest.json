@@ -1,0 +1,28 @@
+{
+  "created_utc": "2026-10-28T11:00:08.771577+00:00",
+  "actor": "assistant-initialization",
+  "python": "3.12.14",
+  "data_origin": "entirely synthetic; no biological sample or patient data",
+  "scope": "min-max scaling and weighted FIS arithmetic only",
+  "upstream_repository": "https://github.com/zhoujj2013/lncfuntk",
+  "upstream_commit": "65f6d18a2dbc2a09901a867583f5e2a84bdfb3a9",
+  "weights": {
+    "miRNA": 0.22,
+    "TF": 0.57,
+    "PCG": 0.21
+  },
+  "input_sha256": {
+    "data/toy_neighbor_counts.tsv": "febc894fbae754c74c500e95399a0cae28172f483c224ae3ca64e651bab7c3f4",
+    "vendor/lncfuntk/pretrained.weight.value.lst": "8e84522ac6fc36238a93a35bfaa958506f1f98a45522702e31742e21a28bfa49",
+    "scripts/fis_core.py": "0fdac913e0c8640a8d08570757fd3aa340a64cee578f54b37c1fcb042a1ba4ca",
+    "scripts/run_demo.py": "a881f1d17f93fb1b3235a32a243c72f74936c0aeddf287729509b02cc1564271"
+  },
+  "excluded": [
+    "RNA-seq processing",
+    "network integration from experimental data",
+    "weight training",
+    "random-network cutoff",
+    "GO enrichment",
+    "paper-level biological validation"
+  ]
+}
